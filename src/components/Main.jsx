@@ -11,9 +11,6 @@ const renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-// Sets the color of the background
-renderer.setClearColor(0xFEFEFE);
-
 const scene = new THREE.Scene();
 const textureLoader = new THREE.TextureLoader();
 const camera = new THREE.PerspectiveCamera(
