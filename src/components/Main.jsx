@@ -26,7 +26,8 @@ const camera = new THREE.PerspectiveCamera(
 
 const ambientLight = new THREE.AmbientLight(0x333333)
 scene.add(ambientLight)
-const demoSphere = createSphere(3.2,demoTxt, 28,scene,textureLoader)
+
+const demoSphere = createSphere(16,demoTxt, 0 ,scene,textureLoader)
 
 // Sets orbit control to move the camera around
 const orbit = new OrbitControls(camera, renderer.domElement);
@@ -36,6 +37,7 @@ camera.position.set(-90, 140, 140);
 orbit.update();
 
 function animate() {
+    demoSphere.mesh.rotateY(0.004)
     renderer.render(scene, camera);
 }
 
