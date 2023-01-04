@@ -39,6 +39,7 @@ function animate() {
 }
 
 renderer.setAnimationLoop(animate);
+animate();
 
 window.addEventListener('resize', function() {
     camera.aspect = window.innerWidth / window.innerHeight;
