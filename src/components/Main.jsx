@@ -27,11 +27,11 @@ scene.add(ambientLight)
 const demoSphere = createSphere(16,demoTxt, 0 ,scene,textureLoader)
 
 // Sets orbit control to move the camera around
-const orbit = new OrbitControls(camera, renderer.domElement);
-
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enablePan = false;
 // Camera positioning
 camera.position.set(-90, 140, 140);
-orbit.update();
+controls.update();
 
 function animate() {
     demoSphere.mesh.rotateY(0.004)
