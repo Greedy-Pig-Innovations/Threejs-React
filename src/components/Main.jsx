@@ -1,29 +1,14 @@
-import * as THREE from 'three';
-import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
-import { createSphere } from './utils';
-import demoTxt from '../assets/demoTxt.jpg'
-import { init, controls } from './';
-
+import React from 'react';
+import { Three } from '../threejs/Three';
 
 export default function Main() {
-let {renderer,scene,textureLoader,camera} = init();
-controls(camera,renderer.domElement)
+    Three();
 
+    return (
+        <div>
+            <h1>HELLO, WORLD</h1>
+        </div>
+    )
 
-const demoSphere = createSphere(16,demoTxt, 0 ,scene,textureLoader)
-
-function animate() {
-    demoSphere.mesh.rotateY(0.004)
-    renderer.render(scene, camera);
-}
-
-renderer.setAnimationLoop(animate);
-animate();
-
-window.addEventListener('resize', function() {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-});
 
 }
